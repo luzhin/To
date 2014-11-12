@@ -50,9 +50,19 @@ FROM w_to_types AS t ' . PHP_EOL . $and;
     return $this->_getQuery($query);
   }
   
+  /**
+   * Метод для получения списка групп.
+	 * @return array
+	 */
+  public function getGroups($id = null, $model_id = null) {
+    $and = (is_null($id)) ? '' : 'WHERE too.type_id = ' . $id . PHP_EOL;
+    $query = 'SELECT *
+FROM w_to AS too ' . PHP_EOL . 
+$and . 
+' ORDER BY type_id, descr';
+    return $this->_getQuery($query);
+  }
 
-
-    
   /**
    * Метод-заготовка.
 	 * @return array

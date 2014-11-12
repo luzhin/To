@@ -1,7 +1,7 @@
 <?php
 Class Helper
 {
-  //CONST EXT_LINK_PRICE = 'http://massive.ua/goods/#partnumber#/#brand#/';
+  CONST EXT_LINK_PRICE = 'http://arnot24.ru/parts/#part#/#brand#';
   static $model = null;
 	
 	/**
