@@ -17,6 +17,16 @@ class Cat_To
 		return self::$model;
 	}
   
+  /**
+   * Метод-заготовка.
+	 * @return array
+	 */
+  public function getBrands() {
+    $query = 'SELECT *
+FROM w_to_cars AS c';
+    return $this->_getQuery($query);
+  }
+  
 
 
   /**
