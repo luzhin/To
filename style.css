@@ -1,0 +1,50 @@
+table tr:hover {
+  background-color: #DFE7F2;
+  color: #000000;
+}
+
+td.str {
+  font-weight: bold;
+}
+
+td.brd, th.brd {
+  border: 1px solid #000000;
+}
+
+th {
+  background-color: lightblue;
+}
+
+div.article {
+  position: absolute; 
+  border: 1px dotted blue; 
+  cursor: pointer; 
+  background-color: #ffffff; 
+  color: #000000; 
+  font-size: 14pt;
+}
+
+div.article:hover {
+  background-color: #DFE7F2!important;
+  color: #000000; 
+}
+
+.hl {
+  background-color: #DFE7F2!important;
+  color: #000000; 
+}
+
+.hlh:hover {
+  background-color: #DFE7F2!important;
+  color: #000000; 
+}
+
+a.a-hl {
+  color: red;
+  font-weight: bold; 
+}
+
+.dashed-underline {
+  cursor: pointer;
+  border-bottom: 1px dashed #000000;
+}
