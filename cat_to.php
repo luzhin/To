@@ -18,7 +18,7 @@ class Cat_To
 	}
   
   /**
-   * Метод-заготовка.
+   * Метод для получения списка брендов для главной страницы.
 	 * @return array
 	 */
   public function getBrands() {
@@ -27,8 +27,32 @@ FROM w_to_cars AS c';
     return $this->_getQuery($query);
   }
   
+  /**
+   * Метод для получения списка моделей определенного бренда.
+	 * @return array
+	 */
+  public function getModels($car_id = null) {
+    $and = (is_null($car_id)) ? '' : 'WHERE m.car_id = ' . $car_id;
+    $query = 'SELECT id, car_id, name, sort, is_active, content, title, kwords, descr, img, seo_text
+FROM w_to_models AS m ' . PHP_EOL . $and;
+    return $this->_getQuery($query);
+  }
+  
+  /**
+   * Метод для получения списка комплектаций.
+	 * @return array
+	 */
+  public function getTypes($model_id = null) {
+    $and = (is_null($model_id)) ? '' : 'WHERE t.model_id = ' . $model_id;
+    $query = 'SELECT id, model_id, name, sort, is_active, content, title, kwords, descr, img, `mod`, `engine`, engine_model, 
+      engine_obj, engine_horse, type_year, seo_text, tecdoc_url, tecdoc_id
+FROM w_to_types AS t ' . PHP_EOL . $and;
+    return $this->_getQuery($query);
+  }
+  
 
 
+    
   /**
    * Метод-заготовка.
 	 * @return array

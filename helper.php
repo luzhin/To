@@ -170,11 +170,11 @@ Class Helper
             }
           } elseif ($key == $imgField) {
             //echo dirname(__FILE__), DIRECTORY_SEPARATOR, $value, '<br>', PHP_EOL;
-            if (file_exists($value)) {
-              $td_img = '<td><img src="' . $value . '" alt="ТО" width="'.$imgSize[0].'" height="'.$imgSize[1].'"></td>';
-            } else {
-              $td_img = '<td><img src="/pict/titles/0.png" alt="ТО" width="'.$imgSize[0].'" height="'.$imgSize[1].'"></td>';
-            }
+            //if (file_exists($value)) {
+              $td_img = '<td><div style="width:'.$imgSize[0].'; height:'.$imgSize[1].';"><img src="' . $value . '" alt="ТО" width="100%"></div></td>';
+            //} else {
+              //$td_img = '<td width="'.$imgSize[0].'" height="'.$imgSize[1].'"><img src="/pict/titles/0.png" alt="ТО"></td>';
+            //}
           } else {
             if (!in_array($key, $excludeFields)) {
               if ($full) {
