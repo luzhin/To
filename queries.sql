@@ -1,5 +1,5 @@
-CREATE TABLE `w_to` (
-     `id` INT(10) UNSIGNED NOT NULL
+CREATE TABLE `to_groups` (
+     `id` INT(10) UNSIGNED NOT NULL,
      `type_id` INT(10) UNSIGNED DEFAULT NULL,
      `descr` varchar(512) DEFAULT NULL,
      `box` varchar(20) DEFAULT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `w_to` (
      `seo_descr` varchar(512) DEFAULT NULL
 ) DEFAULT CHARSET=utf8;
 
-CREATE TABLE `w_to_types` (
+CREATE TABLE `to_types` (
      `id` INT(10) UNSIGNED NOT NULL,
      `model_id` INT(10) UNSIGNED NOT NULL,
      `name` varchar(100) DEFAULT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `w_to_types` (
      `tecdoc_id` INT(10) UNSIGNED DEFAULT NULL
 ) DEFAULT CHARSET=utf8;
 
-CREATE TABLE `w_to_models` (
+CREATE TABLE `to_models` (
      `id` INT(10) UNSIGNED NOT NULL,
      `car_id` INT(10) UNSIGNED DEFAULT NULL,
      `name` varchar(100) DEFAULT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE `w_to_models` (
      `seo_text` varchar(100) DEFAULT NULL
 ) DEFAULT CHARSET=utf8;
 
-CREATE TABLE `w_to_cars` (
+CREATE TABLE `to_cars` (
      `id` INT(10) UNSIGNED NOT NULL,
      `name` varchar(100) DEFAULT NULL,
      `sort` INT(10) UNSIGNED DEFAULT NULL,

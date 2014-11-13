@@ -23,7 +23,7 @@ class Cat_To
 	 */
   public function getBrands() {
     $query = 'SELECT *
-FROM w_to_cars AS c';
+FROM to_cars AS c';
     return $this->_getQuery($query);
   }
   
@@ -34,7 +34,7 @@ FROM w_to_cars AS c';
   public function getModels($car_id = null) {
     $and = (is_null($car_id)) ? '' : 'WHERE m.car_id = ' . $car_id;
     $query = 'SELECT id, car_id, name, sort, is_active, content, title, kwords, descr, img, seo_text
-FROM w_to_models AS m ' . PHP_EOL . $and;
+FROM to_models AS m ' . PHP_EOL . $and;
     return $this->_getQuery($query);
   }
   
@@ -46,7 +46,7 @@ FROM w_to_models AS m ' . PHP_EOL . $and;
     $and = (is_null($model_id)) ? '' : 'WHERE t.model_id = ' . $model_id;
     $query = 'SELECT id, model_id, name, sort, is_active, content, title, kwords, descr, img, `mod`, `engine`, engine_model, 
       engine_obj, engine_horse, type_year, seo_text, tecdoc_url, tecdoc_id
-FROM w_to_types AS t ' . PHP_EOL . $and;
+FROM to_types AS t ' . PHP_EOL . $and;
     return $this->_getQuery($query);
   }
   
@@ -57,7 +57,7 @@ FROM w_to_types AS t ' . PHP_EOL . $and;
   public function getGroups($id = null, $model_id = null) {
     $and = (is_null($id)) ? '' : 'WHERE too.type_id = ' . $id . PHP_EOL;
     $query = 'SELECT *
-FROM w_to AS too ' . PHP_EOL . 
+FROM to_groups AS too ' . PHP_EOL . 
 $and . 
 ' ORDER BY type_id, descr';
     return $this->_getQuery($query);
