@@ -28,6 +28,26 @@ FROM to_cars AS c';
   }
   
   /**
+   * Метод для установки url_name.
+	 * @return array
+	 */
+  public function setUrlName($table_name, $id, $url_name) {
+    $query = 'UPDATE '.$table_name.' SET url_name = \''.$url_name.'\' WHERE id = '.$id;
+    $this->_setQuery($query);
+    return 'Ok!';
+  }
+  
+  /**
+   * Метод для установки url_name как id.
+	 * @return array
+	 */
+  public function setUrlNameLikeID($table_name) {
+    $query = 'UPDATE '.$table_name.' SET url_name =  id';
+    $this->_setQuery($query);
+    return 'Ok!';
+  }
+  
+  /**
    * Метод для получения списка моделей определенного бренда.
 	 * @return array
 	 */
@@ -62,7 +82,7 @@ $and .
 ' ORDER BY type_id, descr';
     return $this->_getQuery($query);
   }
-
+  
   /**
    * Метод-заготовка.
 	 * @return array
@@ -110,5 +130,27 @@ $and .
     }
     
     return $resultArray;
+  }
+  
+  private function _setQuery($query, $databaseName = null) {
+    if (Init::_DEBUG) {
+      echo '<div onClick=\'$(".sqlquery").toggle()\'><span class="dashed-underline">Query</span>', 
+           '</div><div class="sqlquery" style="width:800px!important; font-family: Courier, monospace, \'Courier New\'; font-size: 7pt; display: none;"><pre>', $query, '</pre></div>';
+      //exit();
+    }
+    $db = @mysql_connect(Init::_HOST, Init::_USER, Init::_PASSWORD);
+    if (is_null($databaseName)) {
+      @mysql_select_db(Init::_DATABASE, $db);
+    } else {
+      @mysql_select_db($databaseName, $db);
+    }
+    
+    mysql_query ("set_client='utf8'");
+    mysql_query ("set character_set_results='utf8'");
+    mysql_query ("set collation_connection='utf8_general_ci'");
+    mysql_query ("SET NAMES utf8");
+    
+    @mysql_query($query, $db);
+    mysql_close($db);
   }
 }

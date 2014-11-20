@@ -6,5 +6,5 @@ class Init
   CONST _USER     = 'root';
   CONST _PASSWORD = 'kldu57nv';
   CONST _DATABASE = 'to';
-  CONST _DEBUG    = true;
+  CONST _DEBUG    = false;
 }

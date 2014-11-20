@@ -61,3 +61,8 @@ CREATE TABLE `to_cars` (
      `truck` INT(10) UNSIGNED DEFAULT NULL,
      `seo_text` varchar(100) DEFAULT NULL
 ) DEFAULT CHARSET=utf8;
+
+ALTER TABLE `to_cars` ADD COLUMN `url_name` VARCHAR(100) NULL DEFAULT NULL AFTER `seo_text`;
+ALTER TABLE `to_models` ADD COLUMN `url_name` VARCHAR(100) NULL DEFAULT NULL AFTER `seo_text`;
+ALTER TABLE `to_types` ADD COLUMN `url_name` VARCHAR(100) NULL DEFAULT NULL AFTER `tecdoc_id`;
+ALTER TABLE `to_groups` ADD COLUMN `url_name` VARCHAR(100) NULL DEFAULT NULL AFTER `seo_descr`;
