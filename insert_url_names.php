@@ -26,10 +26,10 @@
       $matches = str_replace(array('/', ',', '.', '\'', '"'),'_',$matches);
       $matches = preg_replace('/_+/','_',$matches);
 
-      $matches = $to->RemoveCharset($matches);
+      $matches = $to->prepareCharset($matches);
 
       $url_name = strtolower($matches);
-      //echo $row['id'], '. ', $row['name'], ' -> ', $url_name, PHP_EOL;
+      echo $row['id'], '. ', $row['name'], ' -> ', $url_name, PHP_EOL;
       $answer = $to->setUrlName('to_models', $row['id'], $url_name);
       //echo $answer, PHP_EOL;
     }

@@ -83,7 +83,7 @@ $and .
     return $this->_getQuery($query);
   }
   
-  public function RemoveCharset($str) {
+  public function prepareCharset($str) {
     $str = $this->CyrillicToLatinica2($str);    //перегоняем кирилицу в латиницу
     return preg_replace("/\W/",'',$str);        //[a-zA-Z0-9]
   }
